@@ -10,7 +10,7 @@ cask "screengrab" do
   depends_on macos: ">= :ventura"
 
   postflight do
-    system "xattr", "-d", "com.apple.quarantine", "#{appdir}/ScreenGrab.app"
+    system "xattr -d com.apple.quarantine #{appdir}/ScreenGrab.app"
   end
 
   app "ScreenGrab.app"
